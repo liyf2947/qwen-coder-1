@@ -1,19 +1,22 @@
 {
-  "name": "simple-backend",
+  "name": "simple-system-backend",
   "version": "1.0.0",
-  "description": "简单前后端分离系统后端",
-  "main": "server.js",
+  "description": "Simple backend system with Egg.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "egg-bin dev",
+    "start": "eggctl start --daemon",
+    "stop": "eggctl stop"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "mysql2": "^3.6.5",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "egg": "^3.23.0",
+    "egg-mysql": "^4.0.0",
+    "egg-cors": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "egg-bin": "^6.13.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
