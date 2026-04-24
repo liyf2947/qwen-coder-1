@@ -14,3 +14,9 @@ node_modules/
 # Editors
 .vscode/
 ```
+
+# 忽略后端运行时文件夹
+backend/run/
+
+# 如果你不想提交依赖锁文件（可选）
+backend/package-lock.json
