@@ -1,0 +1,28 @@
+-- 创建数据库
+CREATE DATABASE IF NOT EXISTS `simple_system` 
+DEFAULT CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+
+-- 使用数据库
+USE `simple_system`;
+
+-- 创建用户表
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户 ID',
+  `username` varchar(50) NOT NULL COMMENT '用户名',
+  `email` varchar(100) NOT NULL COMMENT '邮箱',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户表';
+
+-- 插入测试数据
+INSERT INTO `users` (`username`, `email`) VALUES 
+('张三', 'zhangsan@example.com'),
+('李四', 'lisi@example.com'),
+('王五', 'wangwu@example.com');
+
+-- 查询验证
+SELECT * FROM `users`;
